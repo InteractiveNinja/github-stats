@@ -6,9 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Stats</title>
+
 </head>
 
 <body>
+<div class="container-fluid">
+    <div class="text-center">
+        <div>
+            <h1 class="p-4">Github Stats</h1>
+        </div>
+        <div>
+            <input class="w-50 form-control-lg text-center " type="text" name="username" id="username"
+                   placeholder="Octocat..">
+        </div>
+
+
+    </div>
+    <div id="git-card" class="card m-4">
+        <div class="d-flex flex-row align-items-center">
+            <div>
+
+                <img id="git-pic" class="imgpic rounded-circle m-3 border border-3"
+                     src="https://avatars.githubusercontent.com/u/39236516?v=4">
+                <i id="git-pro" class="bi bi-star text-primary fs-2 "></i>
+            </div>
+            <div>
+                <p class="fs-1" id="git-name">InteractiveNinja</p>
+                <p class="fs-4" id="git-location">Basel</p>
+                <p class="fs-5 text-secondary" id="git-bio">Ich denke darum bin ich!</p>
+            </div>
+            <div>
+
+            </div>
+
+        </div>
+
+        <div class="card-body m-3">
+            <div class="d-flex flex-row">
+                <div class="d-flex flex-column">
+                    <div>
+                        <p class="fs-4">Follower: <span id="git-follower">0</span></p>
+                    </div>
+                    <div>
+                        <p class="fs-4">Folgt: <span id="git-follows">0</span></p>
+                    </div>
+                    <div>
+                        <p class="fs-4">Repositorys: <span id="git-repos">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
 
 </body>
 
