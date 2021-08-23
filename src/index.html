@@ -3,12 +3,73 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Github Stats</title>
+
 </head>
 
 <body>
+<div class="container-fluid">
+    <div class="text-center">
+        <div>
+            <h1 class="p-4">Github Stats</h1>
+        </div>
+        <div>
+            <input class="w-50 form-control-lg text-center " id="username" name="username" placeholder="Octocat.."
+                   type="text">
+        </div>
+
+
+    </div>
+    <div style="display:none;" class="card m-4" id="git-card">
+        <div class="d-flex flex-row align-items-center">
+            <div>
+
+                <img class="imgpic rounded-circle m-3 border border-3" id="git-pic"
+                     src="">
+            </div>
+            <div>
+                <p class="fs-1" id="git-name"></p>
+
+                <a href="https://twitter.com" target="_blank" class="fs-4" id="git-twitter"></a>
+
+                <p class="fs-4" id="git-location"></p>
+                <p class="fs-5 text-secondary" id="git-bio"></p>
+            </div>
+
+
+        </div>
+
+        <div class="card-body m-3">
+            <div class="d-flex flex-row">
+                <div class="d-flex w-25 flex-column">
+                    <div>
+                        <p class="fs-4">Follower: <span id="git-follower">0</span></p>
+                    </div>
+                    <div>
+                        <p class="fs-4">Folgt: <span id="git-follows">0</span></p>
+                    </div>
+                    <div>
+                        <p class="fs-4">Repositorys: <span id="git-repos">0</span></p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row w-75 justify-content-center" id="git-repos-list">
+<!--                    <div class="border border-2 rounded rounded-2 p-3 m-2 text-center">-->
+<!--                        <p class="fs-4">4Sleep_MC</p>-->
+<!--                        <p class="fs-4">Java</p>-->
+<!--                        <a class="fs-4" href="">Link</a>-->
+<!--                    </div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
 
 </body>
 
