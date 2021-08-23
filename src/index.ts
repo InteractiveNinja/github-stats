@@ -11,6 +11,7 @@ import {
   map,
   mapTo,
   of,
+  subscribeOn,
   switchMap,
   tap,
   throwError,
@@ -18,7 +19,7 @@ import {
 import $ from "jquery";
 import { ajax } from "rxjs/ajax";
 
-type REPO_API = { name: string; url: string; language: string };
+type REPO_API = { name: string; html_url: string; language: string };
 type USER_API = {
   login: string;
   name: string;
@@ -50,16 +51,24 @@ const createCard = (
   !name ? $("#git-name").text(login) : $("#git-name").text(name);
   if (bio) $("#git-bio").text(bio);
   if (followers) $("#git-follower").text(followers);
-  if (location) $("#git-location").text(location);
+  if (location)
+    $("#git-location").html(
+      '<i class="bi bi-geo-alt text-danger"></i>' + location
+    );
   if (avatar_url) $("#git-pic").attr("src", avatar_url);
   if (following) $("#git-follows").text(following);
   if (public_repos) $("#git-repos").text(public_repos);
-  if (twitter_username) $("#git-twitter").text(`@${twitter_username}`);
+  if (twitter_username) {
+    $("#git-twitter").html(
+      `<i class="bi bi-twitter text-primary"></i> @${twitter_username}`
+    );
+    $("#git-twitter").attr("href", `https://twitter.com/${twitter_username}`);
+  }
 
   if (USER_REPOS.length >= 3) {
     for (let i = 0; i < 3; i++) {
       const entry = USER_REPOS[i];
-      if (!entry.url || !entry.name || !entry.language) continue;
+      if (!entry.html_url || !entry.name || !entry.language) continue;
       const html = createRepoCard(USER_REPOS[i]);
       $("#git-repos-list").append(html);
     }
@@ -75,14 +84,15 @@ const clearFields = () => {
   $("#git-follows").text("");
   $("#git-repos").text("");
   $("#git-twitter").text("");
+  $("#git-twitter").attr("href", "");
   $("#git-repos-list").html("");
 };
 
-const createRepoCard = ({ language, name, url }: REPO_API) => {
+const createRepoCard = ({ language, name, html_url }: REPO_API) => {
   return ` <div class="border border-2 rounded rounded-2 p-3 m-2 text-center">
                         <p class="fs-4">${name}</p>
                         <p class="fs-4">${language}</p>
-                        <a class="fs-4" href="${url}"><i class="bi bi-github"></i></a>
+                        <a class="fs-4" target="_blank" href="${html_url}"><i class="bi bi-github"></i></a>
                     </div>`;
 };
 
@@ -112,3 +122,4 @@ input$
       return alert("User nicht gefunden");
     createCard(<USER_API>val.user, <REPO_API[]>val.repo);
   });
+// .subscribe(console.log);
