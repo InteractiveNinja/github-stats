@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Github Stats</title>
 
 </head>
@@ -16,24 +16,25 @@
             <h1 class="p-4">Github Stats</h1>
         </div>
         <div>
-            <input class="w-50 form-control-lg text-center " type="text" name="username" id="username"
-                   placeholder="Octocat..">
+            <input class="w-50 form-control-lg text-center " id="username" name="username" placeholder="Octocat.."
+                   type="text">
         </div>
 
 
     </div>
-    <div id="git-card" class="card m-4">
+    <div class="card m-4" id="git-card">
         <div class="d-flex flex-row align-items-center">
             <div>
 
-                <img id="git-pic" class="imgpic rounded-circle m-3 border border-3"
-                     src="https://avatars.githubusercontent.com/u/39236516?v=4">
-                <i id="git-pro" class="bi bi-star text-primary fs-2 "></i>
+                <img class="imgpic rounded-circle m-3 border border-3" id="git-pic"
+                     src="">
+                <!--                <i id="git-pro" class="bi bi-star text-primary fs-2 "></i>-->
             </div>
             <div>
-                <p class="fs-1" id="git-name">InteractiveNinja</p>
-                <p class="fs-4" id="git-location">Basel</p>
-                <p class="fs-5 text-secondary" id="git-bio">Ich denke darum bin ich!</p>
+                <p class="fs-1" id="git-name"></p>
+                <p class="fs-4" id="git-twitter"></p>
+                <p class="fs-4" id="git-location"></p>
+                <p class="fs-5 text-secondary" id="git-bio"></p>
             </div>
             <div>
 
@@ -43,7 +44,7 @@
 
         <div class="card-body m-3">
             <div class="d-flex flex-row">
-                <div class="d-flex flex-column">
+                <div class="d-flex w-25 flex-column">
                     <div>
                         <p class="fs-4">Follower: <span id="git-follower">0</span></p>
                     </div>
@@ -53,6 +54,14 @@
                     <div>
                         <p class="fs-4">Repositorys: <span id="git-repos">0</span></p>
                     </div>
+                </div>
+                <div class="d-flex flex-row w-75 justify-content-center" id="git-repos-list">
+<!--                    <div class="border border-2 rounded rounded-2 p-3 m-2 text-center">-->
+<!--                        <p class="fs-4">4Sleep_MC</p>-->
+<!--                        <p class="fs-4">Java</p>-->
+<!--                        <a class="fs-4" href="">Link</a>-->
+<!--                    </div>-->
+
                 </div>
             </div>
         </div>
